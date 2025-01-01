@@ -21,6 +21,7 @@
   };
 
   environment.systemPackages = [
+    pkgs.emacs
     pkgs.neovim
     pkgs.curl
     pkgs.gitMinimal
