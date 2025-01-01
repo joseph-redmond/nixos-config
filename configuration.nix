@@ -21,6 +21,7 @@
   };
 
   environment.systemPackages = [
+    pkgs.emacs
     pkgs.neovim
     pkgs.curl
     pkgs.gitMinimal
@@ -39,4 +40,12 @@
   ];
 
   system.stateVersion = "24.11";
+
+  system.autoUpgrade = {
+    enable = true;
+    dates = "15:30";
+    flake = "https://git.josephredmond.com/jredmondjr/nixos-config#hc001";
+    flags = ["--refresh"];
+    randomizedDelaySec = "5m";
+  };
 }
