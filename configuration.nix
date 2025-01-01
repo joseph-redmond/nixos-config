@@ -44,7 +44,7 @@
   system.autoUpgrade = {
     enable = true;
     dates = "15:30";
-    flake = "https://git.josephredmond.com/jredmondjr/nixos-config#hc001";
+    flake = "github:jredmondjr/nixos-config#hc001";
     flags = ["--refresh"];
     randomizedDelaySec = "5m";
   };
