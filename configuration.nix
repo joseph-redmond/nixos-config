@@ -21,7 +21,6 @@
   };
 
   environment.systemPackages = [
-    pkgs.emacs
     pkgs.neovim
     pkgs.curl
     pkgs.gitMinimal
@@ -43,7 +42,7 @@
 
   system.autoUpgrade = {
     enable = true;
-    dates = "15:30";
+    dates = "16:00";
     flake = "github:jredmondjr/nixos-config#hc001";
     flags = ["--refresh"];
     randomizedDelaySec = "5m";
