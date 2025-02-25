@@ -22,8 +22,7 @@
 
   environment.systemPackages = [
     pkgs.emacs
-    pkgs.neovim
-    pkgs.curl
+    pkgs.wget
     pkgs.gitMinimal
     pkgs.htop
   ];
