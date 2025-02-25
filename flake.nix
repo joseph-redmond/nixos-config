@@ -10,8 +10,17 @@
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
-        ./configuration.nix
-        ./disk-config.nix
+        ./system/hc001/configuration.nix
+        ./system/hc001/disk-config.nix
+      ];
+    };
+
+    nixosConfigurations.hc001-wordpress = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        disko.nixosModules.disko
+        ./system/hc001-wordpress/configuration.nix
+        ./system/hc001-wordpress/disk-config.nix
       ];
     };
   };
