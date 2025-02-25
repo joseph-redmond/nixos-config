@@ -25,18 +25,20 @@
     pkgs.neovim
     pkgs.curl
     pkgs.gitMinimal
+    pkgs.htop
   ];
 
   users.users.server_maintainer = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    initialHashedPassword = "";
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINB5QGHV/56stPL+hZiyWsjMyUfkvUi4PfRRf2+2VC0D josephredmondjr@Josephs-Mini.lan"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILDKz72DT4nCg2713iHRc8UgLNcpu6nLcJkeXuol2eB8AAAABHNzaDo="
     ];
   };
 
   users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINB5QGHV/56stPL+hZiyWsjMyUfkvUi4PfRRf2+2VC0D josephredmondjr@Josephs-Mini.lan"
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILDKz72DT4nCg2713iHRc8UgLNcpu6nLcJkeXuol2eB8AAAABHNzaDo="
   ];
 
   system.stateVersion = "24.11";
@@ -44,9 +46,11 @@
   system.autoUpgrade = {
     enable = true;
     dates = "daily";
-    flake = "github:jredmondjr/nixos-config#hc001";
+    flake = "github:joseph-redmond/nixos-config#hc001";
     flags = ["--refresh"];
     randomizedDelaySec = "5m";
     allowReboot = true;
   };
+
+  boot.loader.systemd-boot.configurationLimit = 10;
 }
