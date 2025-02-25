@@ -45,7 +45,7 @@
 
   system.autoUpgrade = {
     enable = true;
-    dates = "daily";
+    dates = "hourly";
     flake = "github:joseph-redmond/nixos-config#hc001";
     flags = ["--refresh"];
     randomizedDelaySec = "5m";
